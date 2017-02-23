@@ -1,7 +1,7 @@
 let express = require("express")
 const AudioFile = require("../models/audiofile")
 
-routes = (account) => {
+let routes = (account) => {
     let userRouter = express.Router()
     userRouter.route('/')
         .get((req, res) => {

@@ -1,6 +1,6 @@
 let express = require("express")
 
-routes = () => {
+let routes = () => {
     let logoutRouter = express.Router()
 
     logoutRouter.route("/")

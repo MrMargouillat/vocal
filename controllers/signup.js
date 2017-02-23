@@ -1,6 +1,6 @@
 let express = require("express")
 
-routes = (account) => {
+let routes = (account) => {
     let signupRouter = express.Router()
     signupRouter.route('/')
         .get((req, res) => {

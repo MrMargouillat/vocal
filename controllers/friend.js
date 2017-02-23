@@ -1,6 +1,6 @@
 let express = require("express")
 
-routes = (account) => {
+let routes = (account) => {
     let friendRouter = express.Router()
     friendRouter.route("/new/:id2")
         .get((req, res) => {

@@ -1,6 +1,6 @@
 let express = require("express")
 
-routes = (account) => {
+let routes = (account) => {
     let loginRouter = express.Router()
 
     loginRouter.route('/')

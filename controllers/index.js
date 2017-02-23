@@ -1,7 +1,7 @@
 let express = require("express")
 const AudioFile = require("../models/audiofile")
 
-routes = () => {
+let routes = () => {
     let indexRouter = express.Router()
     indexRouter.route('/')
         .get((req, res) => {

@@ -1,7 +1,7 @@
 let express = require("express")
 const AudioFile = require("../models/audiofile")
 const randomstring = require("randomstring")
-routes = () => {
+let routes = () => {
     let fileRouter = express.Router()
     fileRouter.route('/upload')
         .post((req, res) => {
