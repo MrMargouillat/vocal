@@ -5,10 +5,10 @@
     "main": "server.js",
     "scripts": {
         "prestart": "npm run security-check",
-        "start": "npm-run-all --parallel share boot",
-        "boot": "nodemon app.js --exec babel-node",
+        "share": "npm-run-all --parallel start localtunnel",
+        "start": "nodemon app.js --exec babel-node",
         "security-check": "nsp check",
-        "share": "lt --port 8080 --subdomain mrdev",
+        "localtunnel": "lt --port 8080 --subdomain mrdev",
         "test": "mocha --reporter progress test/testSetup.js \"./test/**/*.test.js\" "
     },
     "author": "",
