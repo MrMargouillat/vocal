@@ -1,0 +1,21 @@
+<% include ../partials/head %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 middle">
+                <div class="login">
+                    <h1 class="h1">
+                        <div class="logo"><i class="lnr lnr-rocket"></i></h1>
+                    <h1 class="h1">Inscription</h1>
+                    <form method="POST" action="/signup">
+                        <input type="text" name="pseudo" placeholder="Pseudo" value=""><br><br>
+                        <input type="text" name="mail" placeholder="Adresse email" value=""><br><br>
+                        <input type="password" name="password" placeholder="Mot de passe" value=""><br><br>
+                        <button class="btn btn-success" type="submit" name="submit">Commencer</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <% include ../partials/footer %>

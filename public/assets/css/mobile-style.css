@@ -1,0 +1,36 @@
+/* line 1, ../scss/layout/mobile/_header.scss */
+.header-search-l {
+  flex-direction: column;
+}
+
+/* line 5, ../scss/layout/mobile/_header.scss */
+.margin-top-login {
+  margin-top: 20px;
+}
+
+/* line 10, ../scss/layout/mobile/_header.scss */
+.part-1, .part-2 {
+  background-attachment: initial;
+}
+
+/* line 14, ../scss/layout/mobile/_header.scss */
+.header-top-l {
+  display: none;
+}
+
+/* line 1, ../scss/layout/mobile/_grid.scss */
+.part-1, .part-2 {
+  background-attachment: initial;
+}
+
+/* line 1, ../scss/layout/mobile/_row.scss */
+.row {
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* line 7, ../scss/layout/mobile/_row.scss */
+.col-l {
+  width: 100%;
+  padding: 10px;
+}

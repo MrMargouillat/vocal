@@ -1,0 +1,25 @@
+.footer-left-l
+{
+    float: left;
+}
+.footer-right-l
+{
+    float: right;
+}
+
+.footer-right-l, .footer-left-l
+{
+    padding: 9px 20px;
+}
+
+.footer-l
+{
+    width: 100%;
+    display: flex;
+    padding: 40px;
+
+    &:after
+    {
+        clear:both;
+    }
+}

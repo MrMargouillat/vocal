@@ -1,0 +1,35 @@
+<% include ../partials/head %>
+
+    <div class="container">
+        <ul class="audio-players d-flex flex-wrap">
+            <%
+        users.forEach((u)=>{
+            %>
+                <li>
+                    <h3 class="card-title">
+                        <a href="/user/<%= u.user.pseudo %>">
+                            <%= u.user.pseudo %>
+                        </a>
+                    </h3>
+                    <p class="card-text"><small class="text-muted"><%= u.message.upload_date.toLocaleDateString("en-GB") %></small></p>
+                    <div class="audio-player js-audio-player">
+                        <button class="audio-player__control js-control">
+        <div class="audio-player__control-icon"></div>
+      </button>
+                        <h4 class="audio-player__title">
+                            <%= u.message.title %>
+                        </h4>
+                        <audio preload="auto">
+        <source src="/uploads/<%= u.message.file_name %>.mp3"/>
+      </audio><img class="audio-player__cover" src="https://unsplash.it/g/300?image=29" />
+
+                    </div>
+
+                </li>
+                <%
+        })
+        %>
+        </ul>
+
+
+        <% include ../partials/footer %>

@@ -1,0 +1,64 @@
+.header-top-l
+{
+    width: 100%;
+    
+}
+.header-top-left-l
+{
+    float: left;
+}
+.header-top-right-l
+{
+    float: right;
+    &:after
+    {
+        clear: both;
+    }
+}
+
+.header-top-right-l, .header-top-left-l
+{
+    padding: 9px 20px;
+}
+
+.header-search-l
+{
+    display: flex;
+    padding: 20px;
+}
+
+.header-search-form
+{
+    flex-grow: 1;
+}
+.logo
+{
+    flex-grow: 0;
+    font-size: 50px;
+}
+.header-search-login
+{
+    flex-grow: 0;
+}
+
+
+.test
+{
+    width: 100%;
+    display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+}
+
+
+.fleche-l
+{
+    position: absolute;
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 50px;
+    height: 50px; 
+}
+

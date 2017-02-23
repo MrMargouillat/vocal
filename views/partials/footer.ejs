@@ -1,0 +1,69 @@
+</div>
+<!-- closing content -->
+<footer class="container-fluid footer">
+    <div class="container">
+        je suis le footer <a href="/logout" class="link">Déconnexion</a>
+    </div>
+</footer>
+
+<div class="container">
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form action="/file/upload" enctype="multipart/form-data" method="POST">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Publier</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    </div>
+                    <div class="modal-body">
+                        <% if(locals.error) {
+                            %>
+                            <div class="alert alert-warning" role="alert">
+                                <strong>Attention!</strong>
+                                <%= locals.error.message %>
+                            </div>
+                            <% } %>
+                                <% if(locals.success) {
+                            %>
+                                    <div class="alert alert-success" role="alert">
+                                        <strong>Attention!</strong>
+                                        <%= locals.success.message %>
+                                    </div>
+                                    <% } %>
+                                        <div class="form-group">
+                                            <label>Titre</label>
+                                            <input type="text" name="title" class="form-control" placeholder="Titre">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Fichier</label>
+                                            <input type="file" name="audio">
+                                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+            </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<!-- Bootstrap Core JavaScript -->
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="https://osvaldas.info/examples/audio-player-responsive-and-touch-friendly/audioplayer.js"></script>
+<script src="./static/assets/js/app.js"></script>
+</body>
+
+</html>

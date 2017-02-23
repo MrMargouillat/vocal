@@ -1,0 +1,24 @@
+@mixin btn($_text_color, $_bg_color, $_bd_color)
+{
+    padding: 5px 24px 6px 24px;
+    border-radius: 5px;
+    border: solid 2px;
+    border-color: $_bd_color;
+
+    color: $_text_color;
+    font-size: 18px;
+    font-weight: 400;
+    
+    background-color: $_bg_color;
+}
+
+.btn-imp
+{
+    @include btn(#fff, $color_accent, $color_accent);
+    
+}
+
+.btn-notimp
+{
+    @include btn(#fff, transparent, #fff);
+}

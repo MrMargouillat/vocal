@@ -1,0 +1,33 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top navbar-custom">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <a class="navbar-brand" href="/">
+        <span class="lnr lnr-rocket"></span>
+            </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="navbar-brand">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                            <i class="lnr lnr-mic"></i> Publier
+</button>
+                        </a> 
+            </li>
+            
+            <form action="/search/" methode="GET"  class="form-inline my-2 my-lg-0">
+                <input name="q" class="form-control mr-sm-2" type="search" placeholder="Search">
+                <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="lnr lnr-magnifier"></i></button>
+            </form>
+    
+        </ul>
+
+        <ul class="navbar-nav navbar-right">
+            <li class="nav-item">
+                <a class="navbar-brand" href="/user">
+                        <i class="lnr lnr-user"></i>
+                    <%= locals.user.pseudo %></a>
+                </li>
+        </ul>
+    </div>
+</nav>

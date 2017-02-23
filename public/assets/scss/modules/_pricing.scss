@@ -1,0 +1,66 @@
+.pricing
+{
+    @include display-flex;
+    @include flex-wrap(wrap);
+    justify-content: center;
+}
+
+.pricing-col
+{
+    width: 200px;
+    margin-top: 50px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 5px;
+    
+
+    box-shadow: 2px 2px 10px rgba(22, 22, 22, 0.5);
+    border-radius: 10px; 
+}
+
+.pricing-col-1
+{
+    .pricing-col-h2
+    {
+        color: blue;
+    }
+}
+.pricing-col-2
+{
+    .pricing-col-h2
+    {
+        color: red;
+    }
+    
+}
+
+
+.pricing-col-h2
+{
+    text-align: center;
+    font-weight: 500;
+}
+
+.pricing-col-legend
+{
+    color: $color_p;
+    text-align: center;
+}
+
+.pricing-col-round
+{
+    
+    margin: auto;
+
+
+    font-size: 60px;
+    line-height: 80px;
+    text-align: center;
+    color: $color_accent;
+}
+
+.pricing-btn
+{
+    text-align: center;
+    
+}
