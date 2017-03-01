@@ -5,7 +5,6 @@ let routes = () => {
 
     logoutRouter.route("/")
         .get((req, res) => {
-            console.log("object");
             req.session.user = null
             res.redirect('/')
         })

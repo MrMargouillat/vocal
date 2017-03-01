@@ -10,9 +10,7 @@ let routes = (account) => {
                     account.isFriendRequestedBy(req.params.id2, req.session.user.id),
                 ]).then((result) => {
                     if (result[1] === true || result[1] === true) {
-                        account.askFriend(req.session.user.id, req.params.id2).then(() => {
-                            console.log("Good");
-                        })
+                        account.askFriend(req.session.user.id, req.params.id2).then(() => {})
                     }
                 })
             }

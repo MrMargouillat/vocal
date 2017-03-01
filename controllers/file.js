@@ -1,7 +1,7 @@
 let express = require("express")
-const AudioFile = require("../models/audiofile")
-const randomstring = require("randomstring")
-let routes = () => {
+
+
+let routes = (AudioFile) => {
     let fileRouter = express.Router()
     fileRouter.route('/upload')
         .post((req, res) => {
@@ -13,16 +13,18 @@ let routes = () => {
                         // local file
                         let file = new AudioFile(req.files.audio)
                             // check file type
-                        if (file.isAudio) {
-                            //move and rename 
+                        if (file.isAudio()) {
+                            //move and rename
                             // save file name in db with id of client
-                            file.saveWithDb(randomstring.generate(11), req.session.user.id, req.body.title, (result) => {
-                                req.session.success = {
-                                    type: "result",
-                                    message: "Fichier enregistré dans la db avec succès."
-                                }
-                            })
-
+                            file.saveWithDb(req.session.user.id, req.body.title).then(result => {
+                                    req.session.success = {
+                                        type: "result",
+                                        message: "Fichier enregistré dans la db avec succès."
+                                    }
+                                })
+                                .catch(err => {
+                                    throw err
+                                })
                         } else {
                             // else delete and display error
                             req.session.error = {

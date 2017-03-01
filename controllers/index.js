@@ -1,5 +1,5 @@
 let express = require("express")
-const AudioFile = require("../models/audiofile")
+const AudioFile = require("../models/audiofile/audiofile")
 
 let routes = () => {
     let indexRouter = express.Router()

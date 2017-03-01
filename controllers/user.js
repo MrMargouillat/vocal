@@ -1,16 +1,14 @@
 let express = require("express")
-const AudioFile = require("../models/audiofile")
+const AudioFile = require("../models/audiofile/audiofile")
 
 let routes = (account) => {
     let userRouter = express.Router()
     userRouter.route('/')
         .get((req, res) => {
-            console.log(req.session);
             res.redirect("/user/" + req.session.user.pseudo)
         })
     userRouter.route("/:pseudo")
         .get((req, res) => {
-            console.log("object");
             account.getByPseudo(req.params.pseudo).then((result) => {
                 let file = new AudioFile()
                 file.getAllByUserId(result.user_id).then((result_) => {

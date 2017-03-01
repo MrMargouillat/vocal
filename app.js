@@ -3,7 +3,8 @@ let express = require("express")
 let bodyParser = require('body-parser')
 let fileUpload = require('express-fileupload')
 let  cookieSession  = require('cookie-session')
-let account = require("./models/account")
+let account = require("./models/account/account")
+let AudioFile = require("./models/audiofile/audiofile")
 
 let app = express()
 
@@ -11,22 +12,22 @@ let PORT = process.env.port || 8080
 
 app.set('view engine', 'ejs')
 
-// Middleware 
+// Middleware
 app.use('/uploads', express.static('files/upload'))
 app.use('/static', express.static('public'))
 
-// parse application/x-www-form-urlencoded 
+// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({
     extended: false
 }))
 
-// parse application/json 
+// parse application/json
 app.use(bodyParser.json())
 
 // parse form/-data
 app.use(fileUpload());
 
-app.use(cookieSession({  
+app.use(cookieSession({
     name:   'session',
     keys:  ["key"],
 }))
@@ -53,8 +54,7 @@ let needNotLogged = (req, res, next) => {
 // let needNotLogged = test.needNotLogged
 
 app.use((req, res, next) => {
-    console.log(req.session.user)
-        // handeling user to be useable in ejs
+    // handeling user to be useable in ejs
     if (req.session.user) {
         res.locals.user = req.session.user
     }
@@ -96,7 +96,7 @@ let userRouter = require("./controllers/user")(account)
 app.use("/user", needLogged)
 app.use("/user", userRouter)
 
-let fileRouter = require("./controllers/file")()
+let fileRouter = require("./controllers/file")(AudioFile)
 app.use("/file", needLogged)
 app.use("/file", fileRouter)
 
